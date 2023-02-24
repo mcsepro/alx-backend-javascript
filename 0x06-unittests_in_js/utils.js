@@ -1,20 +1,9 @@
+'use strict';
 const Utils = {
   calculateNumber(type, a, b) {
-    const aRound = Math.round(a);
-    const bRound = Math.round(b);
-    if (type === 'SUM') {
-      return aRound + bRound;
-    }
-    if (type === 'SUBTRACT') {
-      return aRound - bRound;
-    }
-    if (type === 'DIVIDE') {
-      if (bRound === 0) {
-        return 'Error';
-      }
-      return aRound / bRound;
-    }
-  },
-};
-  
+    if (type === 'SUM') return Math.round(a) + Math.round(b);
+    if (type === 'SUBTRACT') return Math.round(a) - Math.round(b);
+    if (type === 'DIVIDE') return Math.round(b) === 0 ? 'Error' : Math.round(a) / Math.round(b);
+  }
+}
 module.exports = Utils;
